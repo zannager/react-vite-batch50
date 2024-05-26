@@ -1,7 +1,8 @@
 
 import './App.css'
 // import MyComponent from './components/my-component'
-import Counter from './components/count'
+// import Counter from './components/count'
+import Login from './components/login'
 
 function App() {
 
@@ -9,7 +10,8 @@ function App() {
     <>
       {/* <MyComponent name="Roy" age={12}/>
       <MyComponent name="John" age={13} address="pasig city"/> */}
-      <Counter />
+      {/* <Counter /> */}
+      <Login />
     </>
   )
 }
