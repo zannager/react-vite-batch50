@@ -16,14 +16,25 @@ import './App.css'
 // import DataDisplay2 from './components/render-props/DataDisplay2'
 
 // import Counter from './components/use-reducer/counter'
-import UpdateUser from './components/use-reducer/update-user'
+// import UpdateUser from './components/use-reducer/update-user'
+import { useState } from 'react';
+import ThemeContext from './components/context-api/ThemeContext'
+import ThemedComponent from './components/context-api/ThemedComponent'
+
 
 function App() {
   // const [name, setName] = useState('test')
+  
 
   // const printEmail = (email) => {
   //   console.log("email", email)
   // }
+
+  const [theme, setTheme] = useState('light');
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
 
   return (
     <>
@@ -37,9 +48,16 @@ function App() {
       {/* <DataDisplay2 />  */}
 
       {/* <Counter /> */}
-      <UpdateUser />
+      {/* <UpdateUser /> */}
 
       {/* <ComponentWithUseEffect /> */}
+
+      <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <div>
+          <button onClick={toggleTheme}>Toggle Theme</button>
+          <ThemedComponent />
+        </div>
+      </ThemeContext.Provider>
     </>
   )
 }
