@@ -9,13 +9,14 @@ import './App.css'
 // import DataDisplay from './components/HOC/DataDisplay'
 // import withLoading from './components/HOC/WithLoading'
 
-import ComponentWithUseEffect from './components/use-effect/component-use-effect'
+// import ComponentWithUseEffect from './components/use-effect/component-use-effect'
 
 // const DataDisplayWithLoading = withLoading(DataDisplay)
 
 // import DataDisplay2 from './components/render-props/DataDisplay2'
 
 // import Counter from './components/use-reducer/counter'
+import UpdateUser from './components/use-reducer/update-user'
 
 function App() {
   // const [name, setName] = useState('test')
@@ -36,8 +37,9 @@ function App() {
       {/* <DataDisplay2 />  */}
 
       {/* <Counter /> */}
+      <UpdateUser />
 
-      <ComponentWithUseEffect />
+      {/* <ComponentWithUseEffect /> */}
     </>
   )
 }
