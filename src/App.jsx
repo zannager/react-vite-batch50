@@ -18,23 +18,32 @@ import './App.css'
 // import Counter from './components/use-reducer/counter'
 // import UpdateUser from './components/use-reducer/update-user'
 import { useState } from 'react';
-import ThemeContext from './components/context-api/ThemeContext'
-import ThemedComponent from './components/context-api/ThemedComponent'
+// import ThemeContext from './components/context-api/ThemeContext'
+// import ThemedComponent from './components/context-api/ThemedComponent'
+
+import Child1 from './components/context-api/Child1';
+import UserContext from './components/context-api/UserContext';
 
 
 function App() {
   // const [name, setName] = useState('test')
+
+  const [user, setUser] = useState('user 1')
+
+  const updateUser = (value) => {
+    setUser(value)
+  }
   
 
   // const printEmail = (email) => {
   //   console.log("email", email)
   // }
 
-  const [theme, setTheme] = useState('light');
+  // const [theme, setTheme] = useState('light');
 
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
-  };
+  // const toggleTheme = () => {
+  //   setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+  // };
 
   return (
     <>
@@ -52,12 +61,17 @@ function App() {
 
       {/* <ComponentWithUseEffect /> */}
 
-      <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {/* <ThemeContext.Provider value={{ theme, toggleTheme }}>
         <div>
           <button onClick={toggleTheme}>Toggle Theme</button>
           <ThemedComponent />
         </div>
-      </ThemeContext.Provider>
+      </ThemeContext.Provider> */}
+
+      <UserContext.Provider value={{user, updateUser}}>
+        <Child1 />
+      </UserContext.Provider>
+
     </>
   )
 }
