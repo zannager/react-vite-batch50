@@ -6,12 +6,14 @@ import './App.css'
 // import Child from './components/child'
 // import { useState } from 'react'
 
-import DataDisplay from './components/HOC/DataDisplay'
-import withLoading from './components/HOC/WithLoading'
+// import DataDisplay from './components/HOC/DataDisplay'
+// import withLoading from './components/HOC/WithLoading'
 
-const DataDisplayWithLoading = withLoading(DataDisplay)
+import ComponentWithUseEffect from './components/use-effect/component-use-effect'
 
-// import DataDisplay2 from './components/DataDisplay2'
+// const DataDisplayWithLoading = withLoading(DataDisplay)
+
+// import DataDisplay2 from './components/render-props/DataDisplay2'
 
 // import Counter from './components/use-reducer/counter'
 
@@ -29,11 +31,13 @@ function App() {
       {/* <Counter /> */}
       {/* <Child name={name} printEmail={printEmail}/> */}
 
-      <DataDisplayWithLoading />
+      {/* <DataDisplayWithLoading /> */}
 
       {/* <DataDisplay2 />  */}
 
       {/* <Counter /> */}
+
+      <ComponentWithUseEffect />
     </>
   )
 }
